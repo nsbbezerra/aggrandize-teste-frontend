@@ -1,19 +1,15 @@
 import { Fragment, useContext, useState } from "react";
 import cx from "classnames";
-import { AiOutlineClose, AiOutlineHeart } from "react-icons/ai";
-import { FavoritesProps, ToastProps } from "../../utils/types";
+import { AiOutlineHeart } from "react-icons/ai";
+import { ToastProps } from "../../utils/types";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import Image from "next/image";
-import { FaBoxOpen, FaTrash, FaTrashAlt } from "react-icons/fa";
+import { FaBoxOpen, FaTrash } from "react-icons/fa";
 import Toast from "./Toast";
 import FavoritesContext from "../../context/favorites/favorites";
 import { calcDiscount, formatCurrency } from "../../utils/functionalites";
 
-interface Props {
-  products: FavoritesProps[] | null;
-}
-
-export default function Menu({ products }: Props) {
+export default function Menu() {
   const { favorites, setFavorites } = useContext(FavoritesContext);
 
   const [onChangeToast, setOnChangeToast] = useState<ToastProps>({
@@ -58,7 +54,7 @@ export default function Menu({ products }: Props) {
               <AiOutlineHeart className="text-sky-700" />
               Meus Favoritos
               <span className="favorite-tag">
-                {!products ? 0 : products.length}
+                {!favorites || !favorites.length ? 0 : favorites.length}
               </span>
             </button>
           </PopoverPrimitive.Trigger>
@@ -74,14 +70,14 @@ export default function Menu({ products }: Props) {
             <PopoverPrimitive.Arrow className="fill-current text-white" />
 
             <div className="grid grid-cols-1 divide-y divide-zinc-100">
-              {!products?.length ? (
+              {!favorites || !favorites.length ? (
                 <div className="flex flex-col justify-center items-center gap-2 py-2 text-zinc-700">
                   <FaBoxOpen className="text-2xl animate-bounce" />
                   <span>Nenhum produto favoritado</span>
                 </div>
               ) : (
                 <>
-                  {products?.map((product) => (
+                  {favorites?.map((product) => (
                     <div
                       key={product.id}
                       className="grid grid-cols-[50px_1fr] gap-4 py-2 relative"

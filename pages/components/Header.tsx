@@ -6,12 +6,9 @@ import {
   AiOutlineIdcard,
   AiOutlineShopping,
 } from "react-icons/ai";
-import FavoritesContext from "../../context/favorites/favorites";
 import Menu from "./Menu";
 
 export default function Header() {
-  const { favorites, setFavorites } = useContext(FavoritesContext);
-
   return (
     <Fragment>
       <Head>
@@ -48,7 +45,7 @@ export default function Header() {
               Sobre Nós
             </a>
 
-            <Menu products={favorites} />
+            <Menu />
           </div>
         </div>
       </header>
