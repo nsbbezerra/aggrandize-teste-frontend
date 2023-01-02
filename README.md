@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+    <a href="https://www.nkinfo.com.br/">
+        <img src="https://www.nkinfo.com.br/img/logo.svg" height="120">
+    </a>
+     <h1 align="center">Ecommerce - Teste de Desenvolvimento</h1>
+</p>
 
-## Getting Started
+# Primeiros Passos
 
-First, run the development server:
+## 1 - Variável de Ambiente:
+
+Adicione a variável de ambiente `ENDPOINT_URL` com a URL da API. Ex: `https://minhaapi.com`.
+
+## 2 - Testando a Aplicação:
+
+Execute o seguinte comando para iniciar o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Agora abra [http://localhost:3000](http://localhost:3000) em seu navegador para visualizar a aplicação.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 3 - Build:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Execute o comando para gerar a versão de producão:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+npm run build
+# ou
+yarn build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Agora execute o comando a seguir para iniciar o servidor de produção:
 
-## Learn More
+```bash
+npm run start
+# ou
+yarn start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Bibliotecas e Frameworks utilizados:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next JS + Typescript](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Radix UI](https://www.radix-ui.com/)
+- [React Star Ratings](https://github.com/ekeric13/react-star-ratings)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Funcionalidades Adicionadas:
 
-## Deploy on Vercel
+- Ao clicar no botão de _Favorito_ a lista de itens é armazenada no _Local Storage_
+- `SSG Next JS` adicionado 30 segundos para revalidação dos dados carregados
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Autor
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[<img src="https://avatars.githubusercontent.com/u/44842023?s=400&u=2a8f0844c691b0d32eb0d243edc8eebf226f5b5f&v=4" width=115><br><sub>Natanael Bezerra</sub>](https://github.com/nsbbezerra)
