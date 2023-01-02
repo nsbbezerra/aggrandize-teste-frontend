@@ -6,6 +6,7 @@ import FavoritesContext from "../../../context/favorites/favorites";
 import Toast from "../Toast";
 import { FaBoxOpen } from "react-icons/fa";
 import Rating from "react-star-ratings";
+import { calcDiscount, formatCurrency } from "../../../utils/functionalites";
 
 interface Props {
   products: ProductsProps[];
@@ -29,15 +30,6 @@ export default function Cards({ products }: Props) {
     const storedFavorites = localStorage.getItem("favorites");
     storedFavorites && setFavorites(JSON.parse(String(storedFavorites)));
   }, []);
-
-  function calcDiscount(price: number, discount: number) {
-    let calc = (price * discount) / 100;
-    let final = price - calc;
-    return Number(final.toFixed(2)).toLocaleString("pt-br", {
-      style: "currency",
-      currency: "BRL",
-    });
-  }
 
   function favoriteProduct(id: number) {
     const result = products?.find((item) => item.id === id);
@@ -93,11 +85,6 @@ export default function Cards({ products }: Props) {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-5">
             {products.map((product) => (
               <div className="cards" key={product.id}>
-                {product.discountPercentage > 0 && (
-                  <div className="absolute z-10 top-2 right-2 bg-sky-700 px-2 py-1 text-xs md:text-sm rounded-md text-white">
-                    -{product.discountPercentage}%
-                  </div>
-                )}
                 <div className="card-image-container">
                   <Image
                     fill
@@ -112,7 +99,7 @@ export default function Cards({ products }: Props) {
                     {product.title}
                   </strong>
 
-                  <div className="flex items-center gap-2 justify-center text-sm md:text-base lg:text-lg">
+                  <div className="flex items-center gap-2 justify-center text-sm sm:text-base">
                     <span
                       className={`${
                         product.discountPercentage > 0
@@ -120,10 +107,7 @@ export default function Cards({ products }: Props) {
                           : "text-zinc-800"
                       }`}
                     >
-                      {product.price.toLocaleString("pt-br", {
-                        style: "currency",
-                        currency: "BRL",
-                      })}
+                      {formatCurrency(product.price)}
                     </span>
                     {product.discountPercentage > 0 && (
                       <span>
@@ -150,7 +134,6 @@ export default function Cards({ products }: Props) {
                       onClick={() => removeFromFavorites(product.id)}
                     >
                       <AiFillHeart className="text-sky-700" />
-                      Remover
                     </button>
                   ) : (
                     <button
@@ -158,7 +141,6 @@ export default function Cards({ products }: Props) {
                       onClick={() => favoriteProduct(product.id)}
                     >
                       <AiOutlineHeart className="text-sky-700" />
-                      Favoritar
                     </button>
                   )}
                 </div>

@@ -18,7 +18,7 @@
   }
 
   .set-favorite-btn {
-    @apply flex h-7 sm:h-8 md:h-9 w-full justify-center mt-1 border border-sky-700 rounded-md items-center gap-2 px-3 hover:bg-sky-50 transition-all delay-75 active:bg-sky-100 relative select-none focus:outline-none focus:ring-2 focus:ring-sky-300;
+    @apply flex h-9 w-9 justify-center bg-sky-50 bg-opacity-90 rounded-md items-center gap-2 hover:bg-sky-100 transition-all delay-75 active:bg-sky-50 select-none focus:outline-none focus:ring-2 focus:ring-sky-300 absolute top-2 right-2 text-xl;
   }
 
   .favorite-tag {
@@ -39,6 +39,10 @@
 
   .card-image-container {
     @apply relative w-full h-36 md:h-48 lg:h-56;
+  }
+
+  .remove-btn {
+    @apply absolute top-2 right-0 text-xs flex items-center gap-1 bg-red-50 text-red-700 p-2 rounded-md hover:bg-red-100 active:bg-red-50;
   }
 }
 

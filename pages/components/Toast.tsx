@@ -15,7 +15,7 @@ export default function Toast({ isOpen, close, content, title }: Props) {
         open={isOpen}
         onOpenChange={close}
         className={cx(
-          "z-50 fixed bottom-4 inset-x-4 w-auto md:top-4 md:right-4 md:left-auto md:bottom-auto md:w-full md:max-w-sm shadow-lg rounded-lg",
+          "z-50 fixed bottom-4 inset-x-4 w-auto md:right-4 md:left-auto md:w-full md:max-w-sm shadow-lg rounded-lg",
           "bg-green-700 bg-opacity-90 backdrop-blur-sm",
           "radix-state-open:animate-toast-slide-in-bottom md:radix-state-open:animate-toast-slide-in-right",
           "radix-state-closed:animate-toast-hide",

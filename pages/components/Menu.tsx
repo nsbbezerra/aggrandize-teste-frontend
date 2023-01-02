@@ -7,6 +7,7 @@ import Image from "next/image";
 import { FaBoxOpen, FaTrash, FaTrashAlt } from "react-icons/fa";
 import Toast from "./Toast";
 import FavoritesContext from "../../context/favorites/favorites";
+import { calcDiscount, formatCurrency } from "../../utils/functionalites";
 
 interface Props {
   products: FavoritesProps[] | null;
@@ -19,15 +20,6 @@ export default function Menu({ products }: Props) {
     mode: "add",
     isOpen: false,
   });
-
-  function calcDiscount(price: number, discount: number) {
-    let calc = (price * discount) / 100;
-    let final = price - calc;
-    return Number(final.toFixed(2)).toLocaleString("pt-br", {
-      style: "currency",
-      currency: "BRL",
-    });
-  }
 
   function onCloseToast(isOpen: boolean) {
     setOnChangeToast({
@@ -112,10 +104,7 @@ export default function Menu({ products }: Props) {
                                 : "text-zinc-800"
                             }`}
                           >
-                            {product.price.toLocaleString("pt-br", {
-                              style: "currency",
-                              currency: "BRL",
-                            })}
+                            {formatCurrency(product.price)}
                           </span>
                           {product.discountPercentage > 0 && (
                             <span>
@@ -127,7 +116,7 @@ export default function Menu({ products }: Props) {
                           )}
                         </div>
                         <button
-                          className="absolute top-2 right-0 text-xs flex items-center gap-1 border border-red-700 text-red-700 p-2 rounded-md bg-white"
+                          className="remove-btn"
                           onClick={() => removeFromFavorites(product.id)}
                         >
                           <FaTrash />
