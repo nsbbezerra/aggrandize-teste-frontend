@@ -10,22 +10,38 @@
   }
 
   .menu-items {
-    @apply flex items-center gap-2 text-zinc-700 h-10 px-3 hover:bg-white hover:bg-opacity-50 transition-all delay-75 rounded-md active:bg-opacity-75 w-fit select-none focus:outline-none focus:ring-2 focus:ring-red-300;
+    @apply flex items-center gap-2 text-zinc-700 h-10 px-3 hover:bg-white hover:bg-opacity-50 transition-all delay-75 rounded-md active:bg-opacity-75 w-fit select-none focus:outline-none focus:ring-2 focus:ring-sky-300;
   }
 
   .favorite-btn {
-    @apply flex h-10 bg-white bg-opacity-50 border border-rose-700 rounded-md items-center gap-2 px-3 hover:bg-opacity-75 transition-all delay-75 active:bg-opacity-50 relative select-none focus:outline-none focus:ring-2 focus:ring-red-300;
+    @apply flex h-10 bg-white bg-opacity-50 border border-sky-700 rounded-md items-center gap-2 px-3 hover:bg-opacity-75 transition-all delay-75 active:bg-opacity-50 relative select-none focus:outline-none focus:ring-2 focus:ring-sky-300;
+  }
+
+  .set-favorite-btn {
+    @apply flex h-7 sm:h-8 md:h-9 w-full justify-center mt-1 border border-sky-700 rounded-md items-center gap-2 px-3 hover:bg-sky-50 transition-all delay-75 active:bg-sky-100 relative select-none focus:outline-none focus:ring-2 focus:ring-sky-300;
   }
 
   .favorite-tag {
-    @apply h-[25px] absolute -top-2 -right-3 bg-rose-700 text-white rounded-full px-1 w-[25px] flex items-center text-sm justify-center;
+    @apply h-[25px] absolute -top-2 -right-3 bg-sky-700 text-white rounded-full px-1 w-[25px] flex items-center text-sm justify-center;
   }
 
   .newsletter-btn {
-    @apply bg-rose-700 w-52 h-10 text-white rounded-r-md transition-all delay-75 hover:bg-rose-600 active:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-red-300;
+    @apply bg-sky-700 w-52 h-10 text-white rounded-r-md transition-all delay-75 hover:bg-sky-600 active:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-300;
   }
 
   .social-btn {
-    @apply bg-rose-700 h-10 text-white rounded-full w-10 transition-all delay-75 hover:bg-rose-600 active:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-red-300 flex items-center justify-center;
+    @apply bg-sky-700 h-10 text-white rounded-full w-10 transition-all delay-75 hover:bg-sky-600 active:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-300 flex items-center justify-center;
   }
+
+  .cards {
+    @apply w-full rounded-md bg-white border shadow overflow-hidden relative h-fit;
+  }
+
+  .card-image-container {
+    @apply relative w-full h-36 md:h-48 lg:h-56;
+  }
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }

@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="container mx-auto px-5 max-w-4xl flex flex-col justify-center items-center gap-5">
         <strong className="text-xl text-zinc-100 font-black">E-Commerce</strong>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 justify-items-center w-full text-lg text-rose-400 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-3 justify-items-center w-full text-lg text-sky-500 gap-3">
           <div className="flex items-center gap-2">
             <FaMapMarkedAlt />
             Nosso Endereço
@@ -35,7 +35,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full">
           <div className="sm:col-span-2 flex items-center order-2 sm:order-1">
             <input
-              className="h-10 bg-white w-full rounded-l-md px-3 focus:outline-none focus:ring-2 focus:ring-rose-300"
+              className="h-10 bg-white w-full rounded-l-md px-3 focus:outline-none focus:ring-2 focus:ring-sky-300"
               placeholder="Seu email"
               type={"email"}
             />
