@@ -90,7 +90,7 @@ export default function Cards({ products }: Props) {
                     fill
                     alt="Ecommerce product thumbnail"
                     src={product.thumbnail}
-                    objectFit="contain"
+                    style={{ objectFit: "contain" }}
                   />
                 </div>
 
